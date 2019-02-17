@@ -1,0 +1,11 @@
+{
+  "name": "jta_application",
+  "version": "0.0.1",
+  "description": "A task/tutorial on using the MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdelrahman Khaled Amer",
+  "license": "ISC"
+}
