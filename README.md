@@ -12,6 +12,7 @@ ___
 5. [Starting a Node Project and Initial Commit](#npm_init)
 6. [Optional: GitHub Issues](#issues)
 7. [Node Server](#server)
+8. [Database](#db)
 ___
 <a name ="desc"></a>
 
@@ -233,7 +234,6 @@ ___
 *The file `server.js` will contain the code for starting the server. If you want to see the basic (bare bones) server on its own, check the branch called "starter_server".*
 
 First thing we need to do is to get the modules we want to start building the server. We'll use NPM to install Express which will provide an easy to use API framework and Body-Parser which will allow us to easily read the HTTP requests that the user will send.
-
 ```sh
 $ npm install --save express body-parser
 ```
@@ -251,3 +251,21 @@ Once you're done, just start up your server by typing (in the terminal):
 $ node server.js
 ```
 Your server should start, and if you go to any browser and type `localhost:8080` in the address bar, you should see the message you wrote appear on the screen.
+___
+<a name ="db"></a>
+
+## Database
+
+*The file `server.js` will contain the code for connecting to the database. If you want to see the initial file, check the branch called "mongo_connection"*
+
+The second thing we need to have in order to make our project is the database. We already downloaded and installed MongoDB previously, but now we need to use it in order to store data.
+
+Creating/Storing data will come a little bit later, but for now, let's at least establish a connection. To do that we'll use the module called Mongoose which we'll get through npm too.
+```sh
+$ npm install --save mongoose
+```
+The connection will also be made in the `server.js` file, so once you're done, just run the server again and see if it's connected.
+```sh
+$ node server.js
+```
+If all went well, you should get the success message in your terminal screen.
