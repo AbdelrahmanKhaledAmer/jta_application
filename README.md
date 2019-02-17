@@ -10,6 +10,7 @@ ___
     - Installing Mongo
     - Installing Node
 5. [Starting a Node Project and Initial Commit](#npm_init)
+6. [Optional: GitHub Issues](#issues)
 ___
 <a name ="desc"></a>
 
@@ -153,7 +154,7 @@ We're now finally ready to get started on our project!
 
 First thing we need to do is create a directory that will hold our project. What you can do is create a folder anywhere you want, then right click inside that folder and choose to open a terminal in there. What I choose to do is create the folder I want through the command line.
 
-Once you're inside your folder in the terminal, start an Node project by typing:
+Once you're inside your folder in the terminal, start a Node project by typing:
 ```sh
 $ npm init
 ```
@@ -207,3 +208,19 @@ Now that we have a GitHub repository, it will give you a couple of terminal comm
 $ git remote add origin https://github.com/UserName/RepoName.git #Get your link from your page!
 $ git push -u origin master
 ```
+
+Congratulations! You now have a GitHub Repository for your project. Now we can get started with coding!
+___
+<a name ="issues"></a>
+
+## Optional: GitHub Issues
+
+***\*This section is highly optional.\****
+
+Issues are a way for developers to keep track of features that need to be implemented, bugs that need to be fixed and it's also a way for users to report bugs that the found while using your product/service.
+
+Issues can be opend by almost anyone in or outside the project at any time. The people running the repository can choose to close any issue at any time as well.
+
+Many large projects choose to make issues for each of their initial features, and then close those issues whenever work on a feature has been completed. That helps because issues can be assigned to certain team members and it helps keep everything organized.
+
+I will try to open a few issues for the features that need to be implemented in this project.
