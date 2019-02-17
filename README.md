@@ -11,6 +11,7 @@ ___
     - Installing Node
 5. [Starting a Node Project and Initial Commit](#npm_init)
 6. [Optional: GitHub Issues](#issues)
+7. [Node Server](#server)
 ___
 <a name ="desc"></a>
 
@@ -224,3 +225,29 @@ Issues can be opend by almost anyone in or outside the project at any time. The 
 Many large projects choose to make issues for each of their initial features, and then close those issues whenever work on a feature has been completed. That helps because issues can be assigned to certain team members and it helps keep everything organized.
 
 I will try to open a few issues for the features that need to be implemented in this project.
+___
+<a name ="server"></a>
+
+## Node Server
+
+*The file `server.js` will contain the code for starting the server. If you want to see the basic (bare bones) server on its own, check the branch called "starter_server".*
+
+First thing we need to do is to get the modules we want to start building the server. We'll use NPM to install Express which will provide an easy to use API framework and Body-Parser which will allow us to easily read the HTTP requests that the user will send.
+
+```sh
+$ npm install --save express body-parser
+```
+The `--save` command ensures that an entry will be made in the `package.json` file, so that your teammates can install the same modules dependencies as you.
+
+> ## IMPORTANT!
+> Make a file called `.gitignore` and add the line `node_modules/` in it.
+>
+> A `.gitignore` file ignores all the files that are written in it from any stages, commits or pushes.
+
+Now I can write the code I need in `server.js`.
+
+Once you're done, just start up your server by typing (in the terminal):
+```sh
+$ node server.js
+```
+Your server should start, and if you go to any browser and type `localhost:8080` in the address bar, you should see the message you wrote appear on the screen.
