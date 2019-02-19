@@ -13,6 +13,7 @@ ___
 6. [Optional: GitHub Issues](#issues)
 7. [Node Server](#server)
 8. [Database](#db)
+9. [Models](#models)
 ___
 <a name ="desc"></a>
 
@@ -269,3 +270,16 @@ The connection will also be made in the `server.js` file, so once you're done, j
 $ node server.js
 ```
 If all went well, you should get the success message in your terminal screen.
+___
+<a name ="models"></a>
+
+## Models
+
+*The folder `models` will contain the code describing the models for both post and user. If you want to see the initial files, check the branch called "3_models"*
+
+We need to be able to represent the data we store in a way such that it's easy for us to store, search through and retrieve later. We also need to store all the necessary information that we might need.
+
+To do that we will need to know how to build a "schema" using Mongoose. This [page](https://mongoosejs.com/docs/guide.html) describes a schema saying: A schema in Mongoose maps to a MongoDB collection and defines the shape of the documents within that collection.
+
+It's much cleaner to use separate files for separate models, but you can put everything in one file if you want to.
+___
