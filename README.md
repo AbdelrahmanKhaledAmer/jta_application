@@ -14,8 +14,10 @@ ___
 7. [Node Server](#server)
 8. [Database](#db)
 9. [Models](#models)
+10. [Signup and Login] (#auth)
+    - Testing With Postman
 ___
-<a name ="desc"></a>
+<a name="desc"></a>
 
 ## Description
 
@@ -28,7 +30,7 @@ The task requires us to make a MERN stack app that has the following features:
 
 To keep the spirit of the SE course, I will transform the required features into user stories.
 ___
-<a name ="user_stories"></a>
+<a name="user_stories"></a>
 
 ## User Stories
 
@@ -67,7 +69,7 @@ Let's consider each user story in order:
 
 These features don't need to executed in order, but they need to be executed based on dependencies. For example, the user procedures for signup and login can't be made without creating a user model.
 ___
-<a name ="getting_started"></a>
+<a name="getting_started"></a>
 
 ## Getting Started
 
@@ -149,7 +151,7 @@ $ npm -v
 And the result should look like this:
 ![NPM Version](https://i.ibb.co/MDyZyDr/npm-version.png "NPM version")
 ___
-<a name ="npm_init"></a>
+<a name="npm_init"></a>
 
 ## Starting a Node Project and Initial Commit
 
@@ -214,7 +216,7 @@ $ git push -u origin master
 
 Congratulations! You now have a GitHub Repository for your project. Now we can get started with coding!
 ___
-<a name ="issues"></a>
+<a name="issues"></a>
 
 ## Optional: GitHub Issues
 
@@ -228,7 +230,7 @@ Many large projects choose to make issues for each of their initial features, an
 
 I will try to open a few issues for the features that need to be implemented in this project.
 ___
-<a name ="server"></a>
+<a name="server"></a>
 
 ## Node Server
 
@@ -253,7 +255,7 @@ $ node server.js
 ```
 Your server should start, and if you go to any browser and type `localhost:8080` in the address bar, you should see the message you wrote appear on the screen.
 ___
-<a name ="db"></a>
+<a name="db"></a>
 
 ## Database
 
@@ -271,7 +273,7 @@ $ node server.js
 ```
 If all went well, you should get the success message in your terminal screen.
 ___
-<a name ="models"></a>
+<a name="models"></a>
 
 ## Models
 
@@ -282,4 +284,44 @@ We need to be able to represent the data we store in a way such that it's easy f
 To do that we will need to know how to build a "schema" using Mongoose. This [page](https://mongoosejs.com/docs/guide.html) describes a schema saying: A schema in Mongoose maps to a MongoDB collection and defines the shape of the documents within that collection.
 
 It's much cleaner to use separate files for separate models, but you can put everything in one file if you want to.
+___
+<a name="auth"></a>
+
+## Signup and Login (Authentication)
+
+*The folder `controllers` will contain the file `userController.js` describing these two procedures. If you want to see the initial files, check the branch called "4_auth"*
+
+The first routes we'll implement in the backend will be signup and login.
+
+Signing up is straight forward. Just take the user's information, format it if needed, and insert it into the database. It is recommended to encrypt passwords using a module like `bcryptjs`, however I will not be doing that here for the sake of leaving something for you to research on your own.
+
+Logging in should take the user's signup information, compare it to what exists in the database. If the user exists then send the user a `token` so that he can continue his browsing session. We will need to install the module `jsonwebtoken` to be able to use tokens.
+```sh
+$ npm install --save jsonwebtoken
+```
+
+> A token is (for our intents and purposes) a string that contains the user's data, but encrypts it.
+> An action done without a token is an action done by a user who is not logged in.
+
+### Testing With Postman
+
+Postman is a very useful app that let's you send and receive html requests to and from your API. We can use it to check if our code is running correctly.
+
+To install postman go to their website [here](https://www.getpostman.com/) to download it first then install it.
+
+With postman you can write a json body for your request and send it to the API and see the response as shown in the images below.
+
+1. Once postman is open, make sure your content type is set to application/json
+
+![Postman Application JSON](https://i.ibb.co/gJvMSPY/postman-1.png "application/json")
+
+2. Write the route you want to test in the address bar
+
+![Postman Address Bar](https://i.ibb.co/CHq9rLc/postman-2.png "address")
+
+3. In the 'Body' tab, choose raw and write your JSON request. Once you press send, the response should appear in the box below that.
+
+![Request Response](https://i.ibb.co/H4pG35R/postman-3.png "req->res")
+
+You can test all your routes this way. Even the GET type. All you'll have to do is change the POST option from the top left to GET or vice-versa.
 ___
