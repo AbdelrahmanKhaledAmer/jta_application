@@ -7,15 +7,15 @@ const mongoose = require('mongoose');
 // Initialize express app
 const app = express();
 
+// Get all routes
+const userRoutes = require("./routes/userRoutes.js");
 
 // Use BodyParser as Middleware
 // Middleware is a piece of code that your program runs in the middle of running other code.
 app.use(bodyParser.json());
 
-// A basic get request that just sends a hello world message to the user
-app.get('/', (req, res) => {
-    res.json("Hello, World!");
-});
+// Get the routes for the user
+app.use(userRoutes);
 
 // Connect to mongodb
 const DBName = "jta_app"
