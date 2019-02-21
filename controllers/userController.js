@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 
 // Requiring the user model
-const User = require("../models/user.js")
+const User = require("../models/user.js");
 
 const userController = {
     signUp: (req, res) => {

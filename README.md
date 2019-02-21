@@ -14,8 +14,9 @@ ___
 7. [Node Server](#server)
 8. [Database](#db)
 9. [Models](#models)
-10. [Signup and Login] (#auth)
+10. [Signup and Login](#auth)
     - Testing With Postman
+11. [Protecting Routes With JWT](#post)
 ___
 <a name="desc"></a>
 
@@ -324,4 +325,18 @@ With postman you can write a json body for your request and send it to the API a
 ![Request Response](https://i.ibb.co/H4pG35R/postman-3.png "req->res")
 
 You can test all your routes this way. Even the GET type. All you'll have to do is change the POST option from the top left to GET or vice-versa.
+___
+<a name="post"></a>
+
+## Protecting Routes With JWT
+
+*The folder `controllers` will contain the file `postController.js` describing the post procedures that will be protected and in the `postRoutes.js` file found in the folder `routes`. The actual authentication procedure will be in a file called `auth.js` in a the folder `middleware`. If you want to see the initial files, check the branch called "5_post"*
+
+Now that we're done with user sign up and login, we want to make it so that the user can only veiw posts or post himself/herself if they are logged in.
+
+We can do that in two steps.
+
+The first is to make sure that once a user obtains his/her token then he/she will be always have it in the request **header** whenever another request is made. This step will be made in the frontend side of things.
+
+The second is to make sure that the token in the user's request is valid, and for that we will add an extra authentication middleware.
 ___
