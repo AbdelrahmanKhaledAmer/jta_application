@@ -9,6 +9,7 @@ const app = express();
 
 // Get all routes
 const userRoutes = require("./routes/userRoutes.js");
+const postRoutes = require("./routes/postRoutes.js");
 
 // Use BodyParser as Middleware
 // Middleware is a piece of code that your program runs in the middle of running other code.
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 
 // Get the routes for the user
 app.use(userRoutes);
+app.use(postRoutes);
 
 // Connect to mongodb
 const DBName = "jta_app"
