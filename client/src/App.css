@@ -1,0 +1,22 @@
+.nav-link{
+    display: block;
+    padding: .5rem 1rem;
+    color: rgb(167, 167, 167);
+}
+
+.nav-link:hover{
+    text-decoration-line: underline;
+    color: azure;
+}
+
+div.MyNavLink{
+    display: block;
+    padding: .5rem 1rem;
+    color: rgb(167, 167, 167);
+}
+
+div.MyNavLink:hover{
+    text-decoration-line: underline;
+    color: azure;
+    cursor: pointer;
+}
