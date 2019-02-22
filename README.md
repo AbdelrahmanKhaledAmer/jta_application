@@ -17,6 +17,7 @@ ___
 10. [Signup and Login](#auth)
     - Testing With Postman
 11. [Protecting Routes With JWT](#post)
+12. [React Frontend](#react)
 ___
 <a name="desc"></a>
 
@@ -339,4 +340,59 @@ We can do that in two steps.
 The first is to make sure that once a user obtains his/her token then he/she will be always have it in the request **header** whenever another request is made. This step will be made in the frontend side of things.
 
 The second is to make sure that the token in the user's request is valid, and for that we will add an extra authentication middleware.
+___
+<a name="react"></a>
+
+## React Frontend
+
+*The folder `client` will contain all the code related to the frontend react app. If you eant to see the initial files, check the branch called 6_frontend*
+
+> **Note:** I have not worked with react before, therefore this tutorial might not follow the best practices, however I will do what I can to follow the standards that I find. And if you find anything that's out of place, please leave an issue and I will fix it when I can.
+
+We're done with our backend! We might have to go back later to fix a few bugs, but that's all we'll need for now.
+
+Now we can finally start working on the react frontend. Fortunatley, NPM provides packages that will help us start. First thing we can do is create a new folder that will hold all the front end's code. I usually like to call it `views`, but for the sake of keeping up with conventions I will call it `client` this time because it has all the code that will run on the client side.
+
+Open up a terminal inside the folder you just created and type the following command to install a react helper module
+```sh
+$ npm install -g create-react-app
+```
+The `-g` means that this module will be installed globally on your computer, not just for this project.
+
+Then type this command to create the initial files of your react app
+```sh
+$ create-react-app .
+```
+When it's done, it will have it's own `package.json` file. Make sure to add a proxy option in it to make connection with your backend much easier.
+
+In addition to the `package.json` file the client folder now has a few files that we won't use. So delete whatever you feel will not be important. For me it was `index.css`, `logo.svg` and the `README.md` file that was generated. I also removed all the code in `App.css` and the related code from `index.js` and `App.js` as well.
+
+Try running the react app, but make sure all your dependencies are up to date first:
+```sh
+$ npm install
+$ npm start
+```
+You browser should open a blank page. No let's put some components on the page!
+
+I will also install a few more dependencies that will help us with making a nice looking frontend like `bootstrap` and `reactstrap`.
+```sh
+$ npm install --save bootstrap reactstrap
+```
+### React Components
+
+React components are objects that will be displayed in a html context with `render()`, but contain functionalities that can be described and implemented using JavaScript.
+
+Let's create a new folder inside `src` called components where any component we make will live from now on.
+
+### Redux
+
+Redux is where all our data from the backend will be stored on the client's side. We will need redux in order to control what the client sees, and how the client will interact with the backend.
+
+We will need to install redux, so go ahead and do that.
+```sh
+$ npm install --save redux react-redux redux-thunk axios
+```
+Redux is mainly split into two parts. Actions which communicate with the backend, and reducers which communicate with the frontend.
+
+An action makes a request to one of your endpoints in the API and receives a response which it then gives to the reducers which can forward it to your components. To try and make this more clear, I went ahead and made two more folders inside `src` called `actions` and `reducers`.
 ___
