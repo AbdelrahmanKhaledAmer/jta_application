@@ -78,7 +78,7 @@ const userController = {
             }
             // Wrong password enetered.
             if (userData.password != req.body.password) {
-                res.json(403);
+                res.status(403);
                 res.json({
                     "message": "There was an error in your information. Please try again."
                 });
